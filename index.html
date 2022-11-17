@@ -2,38 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>calculator</title>
+    <style>
+    #calc {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        height: 736px;
+        width: 412px;
+        background-color: rgb(31, 31, 31);
+        ;
+        border-radius: 25px;
+        border-color: black;
+    }
+
+    #UI {
+        padding: 75px;
+    }
+
+    #calcBtns {
+        grid-gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(5, 48px);
+        grid-template-rows: repeat(5, 48px);
+    }
+
+
+    #scrbrd1 {
+        width: 320px;
+        height: 112px;
+        border: 1px solid black;
+        background-color: blue;
+    }
+
+    #scrbrd2 {
+        background-color: green;
+        width: 296px;
+        height: 72px;
+    }
+
+    #screen {
+        background-color: lightgray;
+        width: 248px;
+        height: 48px;
+    }
+
+    button {
+        color: white;
+        transition-duration: 0.2s;
+        border-radius: 50%;
+        border: none;
+    }
+
+    .equals {
+        color: black;
+        background-color: yellow;
+    }
+
+    .number {
+        background-color: black;
+    }
+
+    .func {
+        background-color: rgb(99, 57, 57);
+    }
+
+    .memory {
+        background-color: rgb(46, 65, 46);
+    }
+
+    .number:hover {
+        filter: brightness(0.5);
+    }
+
+    button:hover {
+        filter: brightness(1.75);
+    }
+    </style>
 </head>
 
 <body>
-    <h1>Calculator</h1>
-    <div id="screen"></div>
-    <button>M+</button>
-    <button>M-</button>
-    <button>MR</button>
-    <button>MC</button>
-    <button>+/-</button>
-    <button>Δ%</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>÷</button>
-    <button>√ </button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>×</button>
-    <button>%</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>-</button>
-    <button>CE/C</button>
-    <button>0</button>
-    <button>.</button>
-    <button>=</button>
-    <button>+</button>
+    <div id="calc">
+        <div id="UI">
+            <div>
+                <h3>notBRAUN</h3>
+            </div>
+            <div id="scrbrd1">
+                <div id="scrbrd2">
+                    <div id="screen">
+                    </div>
+                </div>
+            </div>
+            <div id="calcBtns">
+                <button class="memory">M+</button>
+                <button class="memory">M-</button>
+                <button class="memory">MR</button>
+                <button class="memory">MC</button>
+                <button class="func">+/-</button>
+                <button class="func">Δ%</button>
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="func">÷</button>
+                <button class="func">√</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="func">×</button>
+                <button class="func">%</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="func">-</button>
+                <button class="func">CE/C</button>
+                <button class="number">0</button>
+                <button class="func">.</button>
+                <button class="equals">=</button>
+                <button class="func">+</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

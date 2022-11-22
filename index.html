@@ -12,52 +12,61 @@
         height: 736px;
         width: 412px;
         background-color: rgb(31, 31, 31);
-        ;
         border-radius: 25px;
         border-color: black;
+        display: flex;
+        flex-direction: column;
     }
 
-    #UI {
-        padding: 75px;
+    #brand {
+        color: white;
+        margin-top: 60px;
+        margin-left: 56px;
     }
-
-    #calcBtns {
-        grid-gap: 15px;
-        display: grid;
-        grid-template-columns: repeat(5, 48px);
-        grid-template-rows: repeat(5, 48px);
-    }
-
 
     #scrbrd1 {
+        margin-top: 28px;
+        margin-left: 44px;
         width: 320px;
         height: 112px;
         border: 1px solid black;
-        background-color: blue;
+        background-color: rgb(78, 74, 79);
     }
 
     #scrbrd2 {
-        background-color: green;
+        background-color: rgb(162, 163, 157);
         width: 296px;
         height: 72px;
+        display:flex;
+        margin: 12px;
     }
 
     #screen {
-        background-color: lightgray;
+        background-color: rgb(200, 202, 189);
         width: 248px;
         height: 48px;
+        margin: 12px 24px;
     }
 
+    #calcBtns {
+        grid-gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(5, 48px);
+        grid-template-rows: repeat(5, 48px);
+        margin: 136px 44px 56px 44px;
+
+    }
     button {
         color: white;
         transition-duration: 0.2s;
         border-radius: 50%;
         border: none;
+        font-size: 20px;
     }
 
     .equals {
         color: black;
-        background-color: yellow;
+        background-color: rgb(185, 129, 65);
     }
 
     .number {
@@ -65,11 +74,11 @@
     }
 
     .func {
-        background-color: rgb(99, 57, 57);
+        background-color: rgb(75, 52, 42);
     }
 
     .memory {
-        background-color: rgb(46, 65, 46);
+        background-color: rgb(45, 57, 51);
     }
 
     .number:hover {
@@ -79,13 +88,16 @@
     button:hover {
         filter: brightness(1.75);
     }
+
+    #smlfnt{
+        font-size: 16px;
+    }
     </style>
 </head>
 
 <body>
     <div id="calc">
-        <div id="UI">
-            <div>
+            <div id="brand">
                 <h3>notBRAUN</h3>
             </div>
             <div id="scrbrd1">
@@ -99,7 +111,7 @@
                 <button class="memory">M-</button>
                 <button class="memory">MR</button>
                 <button class="memory">MC</button>
-                <button class="func">+/-</button>
+                <button class="memory">+/-</button>
                 <button class="func">Δ%</button>
                 <button class="number">7</button>
                 <button class="number">8</button>
@@ -115,13 +127,12 @@
                 <button class="number">2</button>
                 <button class="number">3</button>
                 <button class="func">-</button>
-                <button class="func">CE/C</button>
+                <button id="smlfnt" class="func">CE/C</button>
                 <button class="number">0</button>
                 <button class="func">.</button>
                 <button class="equals">=</button>
                 <button class="func">+</button>
             </div>
-        </div>
     </div>
 </body>
 

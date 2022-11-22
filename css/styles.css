@@ -19,8 +19,12 @@
     color: white;
     margin-top: 60px;
     margin-left: 56px;
+    font-size: 20px;
 }
 
+h3{
+    margin: 0;
+}
 #screenBorder1 {
     margin-top: 28px;
     margin-left: 44px;
@@ -46,11 +50,12 @@
 }
 
 #calcButtons {
-    grid-gap: 24px;
+    grid-gap: 21px;
     display: grid;
     grid-template-columns: repeat(5, 48px);
     grid-template-rows: repeat(5, 48px);
-    margin: 136px 44px 56px 44px;
+    margin: 132px 44px 56px 44px;
+    padding: 0;
 
 }
 
@@ -62,6 +67,7 @@ button {
     border-radius: 50%;
     border: none;
     font-size: 20px;
+    padding: 0;
 }
 
 .equals {

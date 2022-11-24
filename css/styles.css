@@ -4,10 +4,10 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
-    height: 736px;
+    height: 636px;
     width: 412px;
     background-color: rgb(31, 31, 31);
-    border-radius: 25px;
+    border-radius: 15px 15px 30px 30px;
     border-color: black;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
 
 #brand {
     color: white;
-    margin-top: 60px;
+    margin-top: 56px;
     margin-left: 56px;
     font-size: 20px;
 }
@@ -32,6 +32,7 @@ h3{
     height: 112px;
     border: 1px solid black;
     background-color: rgb(78, 74, 79);
+    border-radius: 2px;
 }
 
 #screenBorder2 {
@@ -40,6 +41,7 @@ h3{
     height: 72px;
     display:flex;
     margin: 12px;
+    border-radius: 4px;
 }
 
 #screen {
@@ -47,6 +49,8 @@ h3{
     width: 248px;
     height: 48px;
     margin: 12px 24px;
+    border-radius: 8px;
+
 }
 
 #calcButtons {
@@ -54,7 +58,7 @@ h3{
     display: grid;
     grid-template-columns: repeat(5, 48px);
     grid-template-rows: repeat(5, 48px);
-    margin: 132px 44px 56px 44px;
+    margin: 52px 44px 56px 44px;
     padding: 0;
 
 }

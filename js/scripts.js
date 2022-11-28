@@ -1,10 +1,16 @@
 let buttons = document.querySelectorAll("button");
-
+let screen = document.querySelector("#screen");
 Array.from(buttons).forEach(button =>
-    button.addEventListener("click", test));
+    button.addEventListener("click", usrSelect));
 
-function test(event) {
+function usrSelect(event) {
     const select = event.target;
-    console.log(select.value);
+    screen.innerText = select.value;
 }
 
+
+
+/*
+press a digit button
+
+ */

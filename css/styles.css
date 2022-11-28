@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('digital-7regular-webfont.woff2') format('woff2'),
+    url('digital-7regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* calculator body */
 
 #calc {
@@ -50,7 +58,11 @@ h3{
     height: 48px;
     margin: 12px 24px;
     border-radius: 8px;
-
+    font-size: 50px;
+    text-align: right;
+    padding-right: 12px;
+    padding-top: 5px;
+    font-family: 'digital-7regular', Arial, sans-serif;
 }
 
 #calcButtons {

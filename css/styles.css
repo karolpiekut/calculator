@@ -30,9 +30,10 @@
     font-size: 20px;
 }
 
-h3{
+h3 {
     margin: 0;
 }
+
 #screenBorder1 {
     margin-top: 28px;
     margin-left: 44px;
@@ -47,7 +48,7 @@ h3{
     background-color: rgb(162, 163, 157);
     width: 296px;
     height: 72px;
-    display:flex;
+    display: flex;
     margin: 12px;
     border-radius: 4px;
 }
@@ -111,6 +112,6 @@ button:hover {
     filter: brightness(1.75);
 }
 
-#smallFont{
+#smallFont {
     font-size: 16px;
 }

@@ -1,6 +1,11 @@
-/*let buttons = document.querySelectorAll("button");
+let digits = document.querySelectorAll(".number");
 let screen = document.querySelector("#screen");
-Array.from(buttons).forEach(button =>
+let operations = document.querySelectorAll(".operations")
+
+Array.from(digits).forEach(button =>
+    button.addEventListener("click", usrSelect));
+
+Array.from(operations).forEach(button =>
     button.addEventListener("click", usrSelect));
 
 function usrSelect(event) {
@@ -9,7 +14,7 @@ function usrSelect(event) {
     arrVal.push(select.value);
     screen.innerText = arrVal;
 }
-*/
+
 
 function multiply(...par) {
     return par.reduce(
@@ -45,5 +50,9 @@ function squareRoot(par) {
 
 function percentage(par1) {
     return par1 / 100;
+}
+
+function operate(fun, par1, par2) {
+    return fun(par1, par2);
 }
 

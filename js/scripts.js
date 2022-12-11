@@ -46,16 +46,37 @@ let buttons = document.querySelectorAll("button");
 let screen = document.querySelector("#screen");
 Array.from(buttons).forEach(button =>
     button.addEventListener("click", theActualWork));
-
 /* the meat */
+let input = 0;
+let operator;
 
 function theActualWork(userPressed) {
     let select = userPressed.target.value;
+
+    //displays first digit and, populates input and operator variable
     if (Number.isNaN(parseInt(select)) === false || select === ".") {
-        screen.innerText = select;
-        return select;
+        input += select;
+    } else {
+        operator = select;
     }
+    screen.innerText = parseInt(input);
+
+    if (operator !== null) {
+        if (operator === "+"){
+            console.log(screen.innerText = add(input, userPressed.target.value));
+            //screen.innerText = add(input, userPressed.target.value);
+        }
+    }
+
+
+    console.log(input);
+    console.log(operator);
 }
+
+
+
+
+
 
 
 

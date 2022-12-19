@@ -35,9 +35,22 @@ function squareRoot(par) {
 function percentage(par1) {
     return par1 / 100;
 }
-
+/*
 function operate(fun, par1, par2) {
-    return fun(par1, par2);
+    let operation = fun(par1, par2);
+    if (operation.toString().length > 9) {
+        return operation.toFixed(9);
+    } else {
+        return operation;
+    }
+}
+*/
+function operate(fun, par1, par2) {
+    if (fun(par1, par2).toString().length > 9) {
+        return fun(par1, par2).toFixed(9);
+    } else {
+        return fun(par1, par2);
+    }
 }
 
 /* event listeners and query selectors */
@@ -62,9 +75,12 @@ function theActualWork(userPressed) {
     screen.innerText = parseInt(input);
 
     if (operator !== null) {
-        if (operator === "+"){
-            console.log(screen.innerText = add(input, userPressed.target.value));
+        if (operator === "√"){
+            screen.innerText = operate(squareRoot, input);
+            //console.log(screen.innerText = add(input, userPressed.target.value));
             //screen.innerText = add(input, userPressed.target.value);
+        }  else if (operator === "+") {
+            screen.innerText = operate(add, input, userPressed.target.value);
         }
     }
 

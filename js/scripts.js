@@ -78,14 +78,19 @@ function theActualWork(userPressed) {
     } else if (select === "-") {
         valuesArr.push(deduct);
         console.log(valuesArr);
-    }
-
-    else if (select === "CE/C") { //resets calc
+    } else if (select === "×") {
+        valuesArr.push(multiply);
+        console.log(valuesArr);
+    } else if (select === "÷") {
+        valuesArr.push(divide);
+        console.log(valuesArr);
+    } else if (select === "CE/C") { //resets calc
         input = 0;
         valuesArr = [];
-        //need logic when equals will only execute if valuesArr.length === 2;
     }
 
+
+    //need logic when equals will only execute if valuesArr.length === 2;
 
     if (select === "=") {
         evaluation = operate(valuesArr[0], valuesArr[1], valuesArr[2]);

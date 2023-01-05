@@ -35,7 +35,7 @@ function squareRoot(par) {
 function percentage(par1) {
     return par1 / 100;
 }
-
+//operate will take three arguments, first number, function, second number and limit the result to 9 digits
 function operate(par1, fun, par2) {
     if (fun(par1, par2).toString().length > 9) {
         return fun(par1, par2).toFixed(9);
@@ -52,55 +52,63 @@ Array.from(buttons).forEach(button =>
     button.addEventListener("click", theActualWork));
 /* the meat */
 
-
 let input = 0;
 let valuesArr = [];
-screen.innerText = 0;
+screen.innerText = 0; //shows zero as initial value on the calculator screen
 let evaluation = 0;
 
 
 
 function theActualWork(userPressed) {
-    let select = userPressed.target.value; //user selection passed to select variable
-
+    //user selection from all buttons passed to select variable
+    let select = userPressed.target.value;
+    //if number or decimal button selected, will concatenate selection (type string) with a global variable input (will start with 0)
     if (Number.isNaN(parseFloat(select)) === false || select === ".") {
-        input += select;  //sets first input integer or float
-    } else if (Number.isNaN(parseFloat(select)) === true || select !== "." || select !== "=") { //if operator selected, push first value into array
+        input += select;
+        console.log(`input initial: ${input}`);
+        console.log(`values array run: ${valuesArr}`);
+        console.log(`valuesArr2: ${valuesArr[2]}`);
+    } else if (Number.isNaN(parseFloat(select)) === true || select !== "." || select !== "=") { //if function button selected, push first value into array
         valuesArr.push(parseFloat(input)); //push first value into array
         input = 0; //sets input back to 0
-    }
-
-
-    //operations
-    if (select === "+") {
-        valuesArr.push(add);
-        console.log(valuesArr);
-    } else if (select === "-") {
-        valuesArr.push(deduct);
-        console.log(valuesArr);
-    } else if (select === "×") {
-        valuesArr.push(multiply);
-        console.log(valuesArr);
-    } else if (select === "÷") {
-        valuesArr.push(divide);
-        console.log(valuesArr);
-    } else if (select === "CE/C") { //resets calc
+        //push function button into valuesArr
+        if (select === "+") {
+            valuesArr.push(add);
+            console.log(`values array after plus: ${valuesArr}`);
+            console.log(`input after plus: ${input}`);
+        } else if (select === "-") {
+            valuesArr.push(deduct);
+        } else if (select === "×") {
+            valuesArr.push(multiply);
+        } else if (select === "÷") {
+            valuesArr.push(divide);
+        } else if (select === "Δ%") {
+            valuesArr.push(deltaPercentage);
+        } else if (select === "%") {
+            valuesArr.push(percentage);
+        } else if (select === "√") {
+            valuesArr.push(squareRoot);
+        }
+    } else if (select === "CE/C") { //reset calculator
         input = 0;
         valuesArr = [];
     }
-
 
     //need logic when equals will only execute if valuesArr.length === 2;
 
     if (select === "=") {
-        evaluation = operate(valuesArr[0], valuesArr[1], valuesArr[2]);
-        console.log(evaluation);
-        valuesArr = [];
-        input = 0;
-        console.log(valuesArr);
-        console.log(input);
+        valuesArr.push(parseFloat(input));
+        console.log(`values array after equals: ${valuesArr}`);
+        //evaluation = operate(valuesArr[0], valuesArr[1], valuesArr[2]);
+       // console.log(evaluation);
+        //valuesArr = [];
+        //valuesArr.push(evaluation);
+        //console.log(`values Array: ${valuesArr}`);
+        //input = 0;
+       // console.log(valuesArr);
+        //console.log(input);
     }
-    //calc display
+
 
     if (input === 0) {
         screen.innerText = input; //display value when 0

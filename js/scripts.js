@@ -65,17 +65,12 @@ function theActualWork(userPressed) {
     //if number or decimal button selected, will concatenate selection (type string) with a global variable input (will start with 0)
     if (Number.isNaN(parseFloat(select)) === false || select === ".") {
         input += select;
-        console.log(`input initial: ${input}`);
-        console.log(`values array run: ${valuesArr}`);
-        console.log(`valuesArr2: ${valuesArr[2]}`);
-    } else if (Number.isNaN(parseFloat(select)) === true || select !== "." || select !== "=") { //if function button selected, push first value into array
+    } else if (select !== "=") { //if function button selected, push first value into array
         valuesArr.push(parseFloat(input)); //push first value into array
         input = 0; //sets input back to 0
         //push function button into valuesArr
         if (select === "+") {
             valuesArr.push(add);
-            console.log(`values array after plus: ${valuesArr}`);
-            console.log(`input after plus: ${input}`);
         } else if (select === "-") {
             valuesArr.push(deduct);
         } else if (select === "×") {
@@ -99,14 +94,14 @@ function theActualWork(userPressed) {
     if (select === "=") {
         valuesArr.push(parseFloat(input));
         console.log(`values array after equals: ${valuesArr}`);
-        //evaluation = operate(valuesArr[0], valuesArr[1], valuesArr[2]);
-       // console.log(evaluation);
-        //valuesArr = [];
-        //valuesArr.push(evaluation);
-        //console.log(`values Array: ${valuesArr}`);
-        //input = 0;
-       // console.log(valuesArr);
-        //console.log(input);
+        evaluation = operate(valuesArr[0], valuesArr[1], valuesArr[2]);
+         console.log(evaluation);
+        valuesArr = [];
+        valuesArr.push(evaluation);
+        console.log(`values Array: ${valuesArr}`);
+        input = 0;
+        console.log(valuesArr);
+        console.log(input);
     }
 
 
@@ -133,6 +128,5 @@ if (operator !== null) {
     }
 }
 */
-
 
 
